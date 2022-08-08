@@ -63,3 +63,58 @@
 //       return 'Draw!';
 //     }
 //   };
+
+// function areYouPlayingBanjo(name) {
+//     if (name[0] == 'R' | name[0] == 'r') {
+//         return (name + ' plays banjo');
+//     } else {
+//         return (name + ' does not play banjo');
+//     }
+// }
+
+// console.log(areYouPlayingBanjo('Adam'));
+
+// function countSheeps(arrayOfSheep) {
+//     let present = 0;
+//     arrayOfSheep.forEach(item => {
+//       if (item == true) {
+//         present += 1
+//       }
+//     });
+//     return present;
+//   }
+
+// function reverseWords(str) {
+//     let reverseWordArr = str.split(" ").map(word => word.split("").reverse().join(""));
+//     return reverseWordArr.join(" ");
+//   }
+
+// function nbYear(p0, percent, aug, p) {
+//     let years;
+//     for (years = 0; p0 < p; years++) {
+//         p0 = Math.floor(p0 + p0 * percent / 100 + aug)
+//     }
+//     return years;
+// }
+
+// console.log(nbYear(1500, 5, 100, 5000))
+
+// function getMiddle(s) {
+//     if (s.length % 2 == 0) {
+//       return s[s.length / 2 - 1] + s[s.length / 2];
+//     } else {
+//       return s[Math.floor(s.length / 2)];
+//     }
+//   }
+
+// const reverseSeq = n => {
+//     let arr = [];
+//     while (n != 0) {
+//         arr.push(n);
+//         n = n - 1;
+//     }
+//     return arr;
+    
+//   };
+
+// console.log(reverseSeq(5));
