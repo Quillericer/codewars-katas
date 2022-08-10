@@ -118,3 +118,68 @@
 //   };
 
 // console.log(reverseSeq(5));
+
+// function printerError(s) {
+//     let count = 0;
+//     for (let i = 0; i < s.length; i++) {
+//         if (s[i] > "m") {
+//             count++;
+//         };
+//     };
+//     return count + "/" + s.length;
+// };
+
+// function positiveSum(arr) {
+//     let sum = 0;
+//     arr.forEach(number => {
+//         if (number > 0) {
+//             sum += number;
+//         }
+//     });
+//     return sum;
+// };
+
+// const binaryArrayToNumber = arr => {
+//     let sum = 0;
+//     const newArr = arr.reverse();
+//     console.log(newArr);
+//     for (let i = 0; i < newArr.length; i++) {
+//         sum += (newArr[i] * (2**i));
+//     };
+//     return sum;
+// };
+
+// function noSpace(x){
+//     const arr = x.split("");
+//     let newArr = [];
+//     arr.forEach(item => {
+//         if (item != " ") {
+//             newArr.push(item);
+//         }
+//     });
+//     return newArr.join("")
+// }
+
+// noSpace('8 j 8   mBliB8g  imjB8B8  jl  B');
+
+// function solution(str, ending) {
+//     const arr = str.split("");
+//     let k = 0;
+//     for (let i = 0; i < str.length; i++) {
+//         if (arr[-ending.length] + i == ending[i]) {
+//             k += 1;
+//         }
+//     }
+//     if (k == ending.length + 1) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// };
+
+// function domainName(url){
+//     url = url.replace("https://", '');
+//     url = url.replace("http://", '');
+//     url = url.replace("www.", '');
+//     return url.split('.')[0];
+//   };
