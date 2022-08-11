@@ -183,3 +183,28 @@
 //     url = url.replace("www.", '');
 //     return url.split('.')[0];
 //   };
+
+// function diamond(n){
+//     if ((n % 2 == 0) | (n < 0)) {
+//         return null;
+//     }
+
+//     if (n == 1) {
+//         return "*\n";
+//     }
+
+
+//     let str = "";
+//     for (let i = 1; i < n; i += 2) {
+//         str = str + " ".repeat((n - i) / 2) + '*'.repeat(i) + "\n";
+//     }
+
+//     for (let i = n; i > 0; i -= 2) {
+//         str = str + " ".repeat((n - i) / 2) + '*'.repeat(i) + "\n";
+//     }
+
+//     return str;
+// }
+
+// console.log(diamond(5));
+// console.log(diamond(3));
