@@ -208,3 +208,25 @@
 
 // console.log(diamond(5));
 // console.log(diamond(3));
+
+// function duplicateEncode(word){
+//     let arr = word.toLowerCase().split("");
+//     let newString = "";
+//     arr.forEach(letter => {
+//         if (arr.filter(item => item == letter).length > 1) {
+//             newString += ")";
+//         } else {
+//             newString += "(";
+//         }
+//     });
+//     return newString;
+// };
+
+// function findNeedle(haystack) {
+//     for (let i = 0; i < haystack.length; i++) {
+//         if (haystack[i] == 'needle') {
+//             return 'found the needle at position ' + i
+//         }
+//     };
+// };
+
