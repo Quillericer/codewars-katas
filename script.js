@@ -230,3 +230,208 @@
 //     };
 // };
 
+// function cakes(recipe, available) {
+//     let count = 0;
+//     while(true) {
+//         for (let ingredient in recipe) {
+//             if (!available[ingredient]) {
+//                 return count;
+//             }
+//             if (available[ingredient] - recipe[ingredient] < 0) {
+//                 return count;
+//             } else {
+//                 available[ingredient] -= recipe[ingredient];
+//             }
+//         }
+//         count++;
+//     }
+// }
+
+// function highAndLow(numbers){
+//     const arr = numbers.split(" ");
+//     let maxNumber = -100000000,
+//         minNumber = 100000000;
+//     arr.forEach(item => {
+//         if (Number(item) > maxNumber) {
+//             maxNumber = item;
+//         }
+//     });
+//     arr.forEach(item => {
+//         if (Number(item) < minNumber) {
+//             minNumber = item;
+//         }
+//     });
+//     return maxNumber + ' ' + minNumber;
+// }
+
+// function tribonacci(signature,n){
+//     let newArr = signature;
+//     while (newArr.length != n) {
+//         newArr.push('');
+//     }
+//     for (let i = 0; newArr.filter(item => item === '').length != 0; newArr.filter(item => item === '').length) {
+//         newArr[i + (n - newArr.filter(item => item === '').length)] = newArr[i + (n - newArr.filter(item => item === '').length) - 3] + newArr[i + (n - newArr.filter(item => item === '').length) - 2] + newArr[i + (n - newArr.filter(item => item === '').length) - 1]; 
+//     }
+//     return newArr;
+// }
+
+// console.log(tribonacci([1,0,0],10))
+
+// function likes(names) {
+//     switch (names.length) {
+//         case (0):
+//           return 'no one likes this';
+//           break;
+//         case (1):
+//           return `${names[0]} likes this`;
+//           break;
+//         case (2):
+//           return `${names[0]} and ${names[1]} like this`;
+//           break;
+//         case (3):
+//           return `${names[0]}, ${names[1]} and ${names[2]} like this`;
+//           break;
+//         default:
+//           return `${names[0]}, ${names[1]} and ${names.length - 2} others like this`;
+//           break;
+//     }
+//   }
+
+
+// Fake Binary
+
+
+function fakeBin(x){
+    let str = x.split(""),
+        newStr = '';
+    str.forEach(number => {
+      Number(number) < 5 ? newStr += '0' : newStr += '1';
+    });
+    return newStr;
+  }
+
+// console.log(fakeBin('45385593107843568'));
+
+
+// Count characters in your string
+
+
+function count(string) {
+    const arr = string.split(""),
+        obj = {};
+
+    if (string.length === 0) {
+        return {};
+    }
+
+    arr.forEach(item => {
+        obj[item] = obj[item]  ? (obj[item] + 1) : 1;
+    });
+
+    return obj;
+    
+}
+
+console.log(count("aba"));
+
+
+// Rot13
+
+function rot13(message) {
+  const alph = "abcdefghijklmnopqrstuvwxyz".split(""),
+    bigAlph = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split(""),
+    msg = message.split(""),
+    newMsg = [];
+  for (let i = 0; i < alph.length; i++) {
+    if (alph.includes(msg[i])) {
+      if (alph.indexOf(msg[i]) + 13 > alph.length) {
+        newMsg.push(alph[alph.indexOf(msg[i]) - 13]);
+      } else {
+        newMsg.push(alph[alph.indexOf(msg[i]) + 13]);
+      }
+    }
+    if (bigAlph.includes(msg[i])) {
+      if (bigAlph.indexOf(msg[i]) + 13 > bigAlph.length) {
+        newMsg.push(bigAlph[bigAlph.indexOf(msg[i]) - 13]);
+      } else {
+        newMsg.push(bigAlph[bigAlph.indexOf(msg[i]) + 13]);
+      }
+    }
+  }
+  return newMsg.join("");
+}
+
+// function solution(string) {
+//   let newString = '';
+//   for (const letter of string) {
+//     if (letter.toUpperCase() == letter) {
+//       newString += ' ';
+//       newString += letter;
+//     } else {
+//       newString += letter;
+//     }
+//   }
+//   return newString;
+// }
+
+// const opposites = ['NORTH'];
+// console.log(opposites.pop());
+
+// function comparePowers(n1,n2){
+//   const first = Math.pow(Math.log(n1[0]), n1[1]),
+//         second = Math.pow(Math.log(n2[0]), n2[1]);
+//   if (first > second) {
+//     return -1;
+//   } else if (first == second) {
+//     return 0;
+//   } else {
+//     return 1;
+//   }
+// }
+
+// const uniqueInOrder = function (iterable) {
+//   let arr,
+//     newArr = [];
+//   if (typeof iterable == "string") {
+//     arr = iterable.split("");
+//   } else {
+//     arr = iterable;
+//   }
+//   arr.forEach((item) => {
+//     if (newArr.length) {
+//       const prevItem = newArr.pop();
+//       if (item != prevItem) {
+//         newArr.push(prevItem);
+//         newArr.push(item);
+//       } else {
+//         newArr.push(prevItem);
+//       }
+//     } else {
+//       newArr.push(item);
+//     }
+//   });
+//   return newArr;
+// };
+
+function persistence(num) {
+  let counter = 0,
+    digits = num.toString().split(''),
+    results = 1;
+
+  while (digits.length > 1) {
+    let results = 1;
+    for (let i = 0; i < digits.length; i++) {
+      results *= digits[i];
+    }
+
+    digits = results.toString().split('');
+    
+    counter += 1;
+  }
+
+
+
+
+  return counter;
+}
+
