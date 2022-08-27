@@ -537,18 +537,79 @@ function rot13(message) {
 //   return count;
 // }
 
-function duplicateCount(text){
-  let string = text.toLowerCase().split("");
-  let count = 0,
-    iterator = 0;
-  while (iterator < string.length) {
-    for (let i = 1; i < string.length; i++) {
-      if (string[iterator] == string[iterator + i]) {
-        count++;
-        string = string.filter(item => item != string[iterator]);
-      }
-    }
-    iterator += 2;
-  }
-  return count;
-}
+// function duplicateCount(text){
+//   let string = text.toLowerCase().split("");
+//   let count = 0,
+//     iterator = 0;
+//   while (iterator < string.length) {
+//     for (let i = 1; i < string.length; i++) {
+//       if (string[iterator] == string[iterator + i]) {
+//         count++;
+//         string = string.filter(item => item != string[iterator]);
+//       }
+//     }
+//     iterator += 2;
+//   }
+//   return count;
+// }
+
+// function parseInt(string) {
+//   let result = 0,
+//     result2 = 0,
+//     multiply = 0;
+//   const obj = {
+//     'one': 1,
+//     'two': 2,
+//     'three': 3,
+//     'four': 4,
+//     'five': 5,
+//     'six': 6,
+//     'seven': 7,
+//     'eight': 8,
+//     'nine': 9,
+//     'ten': 10,
+//     'eleven': 11,
+//     'twelve': 12,
+//     'thirteen': 13,
+//     'fourteen': 14,
+//     'fifteen': 15,
+//     'sixteen': 16,
+//     'seventeen': 17,
+//     'eighteen': 18,
+//     'nineteen': 19,
+//     'twenty': 20,
+//     'thirty': 30,
+//     'forty': 40,
+//     'fifty': 50,
+//     'sixty': 60,
+//     'seventy': 70,
+//     'eighty': 80,
+//     'ninety': 90
+//   };
+//   const multiObj = {
+//     'hundred': 100,
+//     'thousand': 1000,
+//     'million': 1000000
+//   };
+//   function getNumber(string) {
+//     const nArr = string.split("-");
+//     if (nArr.length > 1) {
+//       return obj[nArr[0]] + obj[nArr[1]];
+//     }
+//     return obj[string];
+//   }
+
+//   string.split(" ").forEach(item => {
+//     if (multiObj[item]) {
+//       result *= multiObj[item];
+//       if (result >= 1000) {
+//         result2 = result;
+//         result = 0;
+//       }
+//     } else if (item != 'and') {
+//       result += getNumber(item);
+//     }
+//   });
+
+//   return result + result2;
+// }
