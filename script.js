@@ -413,25 +413,142 @@ function rot13(message) {
 //   return newArr;
 // };
 
-function persistence(num) {
-  let counter = 0,
-    digits = num.toString().split(''),
-    results = 1;
+// function persistence(num) {
+//   let counter = 0,
+//     digits = num.toString().split(''),
+//     results = 1;
 
-  while (digits.length > 1) {
-    let results = 1;
-    for (let i = 0; i < digits.length; i++) {
-      results *= digits[i];
+//   while (digits.length > 1) {
+//     let results = 1;
+//     for (let i = 0; i < digits.length; i++) {
+//       results *= digits[i];
+//     }
+
+//     digits = results.toString().split('');
+
+//     counter += 1;
+//   }
+
+
+
+
+//   return counter;
+// }
+
+// function twoSum(numbers, target) {
+//   let iterator = 0,
+//       newArr = [];
+//   while ((iterator < numbers.length) && newArr.length < 2) {
+//     for (let i = 1; i < numbers.length; i++) {
+//       if ((numbers[iterator] + numbers[iterator + i]) == target) {
+//         newArr.push(iterator);
+//         newArr.push(iterator + i);
+//         break;
+//       }
+//     }
+//     iterator++;
+//   }
+//   return newArr;
+// }
+
+// function elem(x) {
+//   const arr = x.toString().split('');
+//   let newNum = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     newNum += Math.pow(arr[i], i + 1);
+//   }
+//   return newNum;
+// }
+
+// function sumDigPow(a, b) {
+//   let newArr = [];
+//   for (let i = a; i < b; i++) {
+//     if (elem(i) == i) {
+//       newArr.push(i);
+//     }
+//   }
+//   return newArr;
+// }
+
+// console.log(sumDigPow(1, 100));
+
+// function isTriangle(a,b,c) {
+//   if ((a + b > c) && (b + c > a) && (a + c > b)) {
+//     return true;
+//   }
+//   return false;
+// }
+
+
+// function findUniq(arr) {
+//   let unique;
+//   arr.forEach(elem => {
+//     if (arr.filter(item => item == elem).length > 1) {
+//       unique = arr.filter(item => item != elem);
+//     }
+//   });
+//   return unique[0];
+// }
+
+// console.log(findUniq([1, 0, 0]))
+
+// function findUniq(arr) {
+//   let unique;
+//   arr.forEach(elem => {
+//     if (arr.filter(item => item == elem).length > 1) {
+//       unique = arr.filter(item => item != elem);
+//     }
+//   });
+//   return unique[0];
+// }
+
+// function findUniq(arr) {
+//   let unique;
+//   arr.forEach(elem => {
+//     switch (arr.filter(item => item == elem).length) {
+//       case (1):
+//         unique = elem;
+//         break;
+//       }
+//     });
+//     return unique;
+// }
+
+// console.log(findUniq([1, 0, 0]))
+
+// function findUniq(arr) {
+//   for (const number of arr) {
+//     if (arr.filter(item => item == number).length == 1) {
+//       return number;
+//     }
+//   }
+// }
+
+// function duplicateCount(text){
+//   const string = text.toLowerCase().split("");
+//   let count = 0;
+//   for (let i = 0; i < string.length; i++) {
+//     for (let j = i + 1; j < string.length; j) {
+//       if (string[i] == string[j]) {
+//         count++;
+//       }
+//     }
+//   }
+//   return count;
+// }
+
+function duplicateCount(text){
+  let string = text.toLowerCase().split("");
+  let count = 0,
+    iterator = 0;
+  while (iterator < string.length) {
+    for (let i = 1; i < string.length; i++) {
+      if (string[iterator] == string[iterator + i]) {
+        count++;
+        string = string.filter(item => item != string[iterator]);
+      }
     }
-
-    digits = results.toString().split('');
-    
-    counter += 1;
+    iterator += 2;
   }
-
-
-
-
-  return counter;
+  return count;
 }
-
