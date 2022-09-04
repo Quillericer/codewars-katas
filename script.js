@@ -8,7 +8,7 @@
 //         continue;
 //       }
 //     }
-  
+
 //     return z;
 // }
 
@@ -114,7 +114,7 @@
 //         n = n - 1;
 //     }
 //     return arr;
-    
+
 //   };
 
 // console.log(reverseSeq(5));
@@ -193,7 +193,6 @@
 //         return "*\n";
 //     }
 
-
 //     let str = "";
 //     for (let i = 1; i < n; i += 2) {
 //         str = str + " ".repeat((n - i) / 2) + '*'.repeat(i) + "\n";
@@ -270,7 +269,7 @@
 //         newArr.push('');
 //     }
 //     for (let i = 0; newArr.filter(item => item === '').length != 0; newArr.filter(item => item === '').length) {
-//         newArr[i + (n - newArr.filter(item => item === '').length)] = newArr[i + (n - newArr.filter(item => item === '').length) - 3] + newArr[i + (n - newArr.filter(item => item === '').length) - 2] + newArr[i + (n - newArr.filter(item => item === '').length) - 1]; 
+//         newArr[i + (n - newArr.filter(item => item === '').length)] = newArr[i + (n - newArr.filter(item => item === '').length) - 3] + newArr[i + (n - newArr.filter(item => item === '').length) - 2] + newArr[i + (n - newArr.filter(item => item === '').length) - 1];
 //     }
 //     return newArr;
 // }
@@ -297,43 +296,37 @@
 //     }
 //   }
 
-
 // Fake Binary
 
-
-function fakeBin(x){
-    let str = x.split(""),
-        newStr = '';
-    str.forEach(number => {
-      Number(number) < 5 ? newStr += '0' : newStr += '1';
-    });
-    return newStr;
-  }
+function fakeBin(x) {
+  let str = x.split(""),
+    newStr = "";
+  str.forEach((number) => {
+    Number(number) < 5 ? (newStr += "0") : (newStr += "1");
+  });
+  return newStr;
+}
 
 // console.log(fakeBin('45385593107843568'));
 
-
 // Count characters in your string
 
-
 function count(string) {
-    const arr = string.split(""),
-        obj = {};
+  const arr = string.split(""),
+    obj = {};
 
-    if (string.length === 0) {
-        return {};
-    }
+  if (string.length === 0) {
+    return {};
+  }
 
-    arr.forEach(item => {
-        obj[item] = obj[item]  ? (obj[item] + 1) : 1;
-    });
+  arr.forEach((item) => {
+    obj[item] = obj[item] ? obj[item] + 1 : 1;
+  });
 
-    return obj;
-    
+  return obj;
 }
 
 console.log(count("aba"));
-
 
 // Rot13
 
@@ -429,9 +422,6 @@ function rot13(message) {
 //     counter += 1;
 //   }
 
-
-
-
 //   return counter;
 // }
 
@@ -478,7 +468,6 @@ function rot13(message) {
 //   }
 //   return false;
 // }
-
 
 // function findUniq(arr) {
 //   let unique;
@@ -553,63 +542,154 @@ function rot13(message) {
 //   return count;
 // }
 
-// function parseInt(string) {
-//   let result = 0,
-//     result2 = 0,
-//     multiply = 0;
-//   const obj = {
-//     'one': 1,
-//     'two': 2,
-//     'three': 3,
-//     'four': 4,
-//     'five': 5,
-//     'six': 6,
-//     'seven': 7,
-//     'eight': 8,
-//     'nine': 9,
-//     'ten': 10,
-//     'eleven': 11,
-//     'twelve': 12,
-//     'thirteen': 13,
-//     'fourteen': 14,
-//     'fifteen': 15,
-//     'sixteen': 16,
-//     'seventeen': 17,
-//     'eighteen': 18,
-//     'nineteen': 19,
-//     'twenty': 20,
-//     'thirty': 30,
-//     'forty': 40,
-//     'fifty': 50,
-//     'sixty': 60,
-//     'seventy': 70,
-//     'eighty': 80,
-//     'ninety': 90
-//   };
-//   const multiObj = {
-//     'hundred': 100,
-//     'thousand': 1000,
-//     'million': 1000000
-//   };
-//   function getNumber(string) {
-//     const nArr = string.split("-");
-//     if (nArr.length > 1) {
-//       return obj[nArr[0]] + obj[nArr[1]];
-//     }
-//     return obj[string];
-//   }
+function parseInt(string) {
+  let result = 0,
+    result2 = 0;
+  const obj = {
+    one: 1,
+    two: 2,
+    three: 3,
+    four: 4,
+    five: 5,
+    six: 6,
+    seven: 7,
+    eight: 8,
+    nine: 9,
+    ten: 10,
+    eleven: 11,
+    twelve: 12,
+    thirteen: 13,
+    fourteen: 14,
+    fifteen: 15,
+    sixteen: 16,
+    seventeen: 17,
+    eighteen: 18,
+    nineteen: 19,
+    twenty: 20,
+    thirty: 30,
+    forty: 40,
+    fifty: 50,
+    sixty: 60,
+    seventy: 70,
+    eighty: 80,
+    ninety: 90,
+  };
+  const multiObj = {
+    hundred: 100,
+    thousand: 1000,
+    million: 1000000,
+  };
+  function getNumber(string) {
+    const nArr = string.split("-");
+    if (nArr.length > 1) {
+      return obj[nArr[0]] + obj[nArr[1]];
+    }
+    return obj[string];
+  }
 
-//   string.split(" ").forEach(item => {
-//     if (multiObj[item]) {
-//       result *= multiObj[item];
-//       if (result >= 1000) {
-//         result2 = result;
-//         result = 0;
-//       }
-//     } else if (item != 'and') {
-//       result += getNumber(item);
-//     }
-//   });
+  string.split(" ").forEach((item) => {
+    if (multiObj[item]) {
+      result *= multiObj[item];
+      if (result >= 1000) {
+        result2 = result;
+        result = 0;
+      }
+    } else if (item != "and") {
+      result += getNumber(item);
+    }
+  });
 
-//   return result + result2;
-// }
+  return result + result2;
+}
+
+function bouncingBall(h, bounce, window) {
+  if (h < 0 || bounce >= 1 || bounce <= 0 || window > h) {
+    return -1;
+  }
+  let height = h * bounce,
+    counter = 0;
+  while (height > window) {
+    counter += 2;
+    height = height * bounce;
+  }
+  counter += 1;
+  return counter;
+}
+
+function wave(str) {
+  let newArr = [];
+  for (let i = 0; i < str.length; i++) {
+    let copy = str.split("");
+    if (copy[i] !== " ") {
+      copy[i] = copy[i].toUpperCase();
+      newArr.push(copy.join(""));
+    }
+  }
+  return newArr;
+}
+
+console.log(wave("hello"));
+
+function maxSequence(nums) {
+  if (!nums.length) {
+    return 0;
+  }
+  let counter = 0;
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] < 0) {
+      counter++;
+    }
+  }
+  if (counter == nums.length) {
+    return 0;
+  }
+
+  let solution = nums[0];
+  for (let i = 1; i < nums.length; i++) {
+    nums[i] = Math.max(nums[i], nums[i] + nums[i - 1]);
+    solution = Math.max(solution, nums[i]);
+  }
+  return solution;
+}
+console.log(maxSequence([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
+
+function incrementString(strng) {
+  let alph = "abcdefghijklmnopqrstuvwxyz",
+    numArr = [],
+    letArr = [],
+    strngArr = strng.split("");
+  if (strng.length === 0) {
+    return "1";
+  }
+
+  for (let i = 0; i < strng.length; i++) {
+    if (alph.includes(strngArr[i])) {
+      letArr.push(strngArr[i]);
+    } else {
+      numArr.push(parseInt(strngArr[i]));
+    }
+  }
+
+  numArr.reverse();
+
+  if (numArr.length === 0) {
+    return strng + "1";
+  }
+
+  numArr[0]++;
+  for (let i = 0; i < numArr.length; i++) {
+    if (numArr[i] > 9) {
+      numArr[i] = 0;
+      if (i + 1 < numArr.length) {
+        numArr[i + 1]++;
+      } else {
+        numArr.push(1);
+      }
+    }
+  }
+
+  return letArr.join("") + numArr.reverse().join("");
+}
+
+console.log(incrementString("foobar099"));
+
