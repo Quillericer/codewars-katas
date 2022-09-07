@@ -693,3 +693,61 @@ function incrementString(strng) {
 
 console.log(incrementString("foobar099"));
 
+const RomanNumerals = {
+  fromRoman(item) {
+    const map = { // алфавит
+      IV: 4,
+      IX: 9,
+      XL: 40,
+      XC: 90,
+      CD: 400,
+      CM: 900,
+      I: 1,
+      V: 5,
+      X: 10,
+      L: 50,
+      C: 100,
+      D: 500,
+      M: 1000,
+    };
+    let value = 0;
+    for (let i = 0; i < item.length; i++) {
+      let two = map[item[i] + item[i + 1]], // переменная, содержащая два символа (IV, IX, XL, XC, CD, CM)
+        one = map[item[i]]; // переменная, содержащая один символ (все остальные)
+      if (two != null) { // если переменная имеет значение, то к value добавляем ее число и увеличиваем i еще на один, чтобы пропустило 2 символа
+        value += two;
+        i++;
+      } else if (one != null) value += one; // добавляем значение одного символа
+    }
+    return value;
+  },
+  toRoman(item) {
+    const map = { // алфавит
+      M: 1000,
+      CM: 900,
+      D: 500,
+      CD: 400,
+      C: 100,
+      XC: 90,
+      L: 50,
+      XL: 40,
+      X: 10,
+      IX: 9,
+      V: 5,
+      IV: 4,
+      I: 1,
+    };
+    let roman = "";
+    while (item > 0) {
+      for (const r in map) {
+        // ключ
+        if (map[r] <= item) {
+          roman += r;
+          item -= map[r];
+          break;
+        }
+      }
+    }
+    return roman;
+  },
+};
